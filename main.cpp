@@ -3,12 +3,18 @@
 #include <windows.h>
 #include <fstream>
 
+#include "Status.h"
+
 using namespace std;
 
 void TitleASCII();
 void GameIntro();
 void GameStart();
 void GameMain();
+void PlayDoorClosedSound();
+void PlayDoorOpenSound();
+void PlayKeyPickupSound();
+void PlayWinSound();
 
 int g_mainMenuSelection;
 
@@ -67,7 +73,8 @@ void GameIntro()
 void GameStart()
 {
 	bool selectionLoop = true;
-	while (selectionLoop = true)
+
+	while (selectionLoop)
 	{
 		system("cls");
 
@@ -76,19 +83,20 @@ void GameStart()
 		cout << "2) Quit" << endl;
 
 		cin >> g_mainMenuSelection;
-	
-		switch (g_mainMenuSelection)
+
+		if (g_mainMenuSelection == 1)
 		{
-		case 1:
 			GameMain();
 			selectionLoop = false;
-			break;
-		case 2:
+		}
+		else if (g_mainMenuSelection == 2)
+		{
 			system("cls");
 			cout << "Thanks for playing!" << endl;
 			selectionLoop = false;
-			break;
-		default:
+		}
+		else
+		{
 			system("cls");
 			cout << "That's not a valid selection, please try again..." << endl;
 			system("pause");
@@ -104,4 +112,21 @@ void GameMain()
 	{
 		cout << "game" << endl;
 	}
+}
+
+void PlayDoorClosedSound()
+{
+
+}
+void PlayDoorOpenSound()
+{
+
+}
+void PlayKeyPickupSound()
+{
+
+}
+void PlayWinSound()
+{
+
 }
