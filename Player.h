@@ -1,5 +1,6 @@
 #pragma once
 #include "Point.h"
+#include "Status.h"
 
 class Player
 {
